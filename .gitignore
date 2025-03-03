@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Build files
+.build/
+
+# Environment variables
+.env
+.env.production
+.env.development
+
+# Temporary files
+.cache/
+.tmp/
+
+# Logs
+logs/
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE specific files
+.vscode/
+.idea/
+*.swp
+
+# Strapi-specific files
+public/uploads/
+
+# Yarn and npm specific
+yarn.lock
+package-lock.json
+
+# Miscellaneous
+*.zip

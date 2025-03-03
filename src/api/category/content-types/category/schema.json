@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Categories",
+    "description": "Organize your content into categories"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 70,
+      "required": true
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Status": {
+      "type": "boolean",
+      "default": true
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "categories"
+    }
+  }
+}

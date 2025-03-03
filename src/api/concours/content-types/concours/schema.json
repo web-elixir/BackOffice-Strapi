@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "concours",
+  "info": {
+    "singularName": "concours",
+    "pluralName": "concour",
+    "displayName": "Concours",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Begin": {
+      "type": "datetime",
+      "required": true
+    },
+    "End": {
+      "type": "datetime",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Terms": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Status": {
+      "type": "boolean",
+      "default": true
+    },
+    "Image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Email": {
+      "type": "email",
+      "nullable": true
+    },
+    "Phone": {
+      "type": "string",
+      "nullable": true
+    },
+    "Street": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string"
+    },    
+    "PostalCode": {
+      "type": "string"
+    }
+  }
+}

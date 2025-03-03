@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maintenances",
+  "info": {
+    "singularName": "maintenance",
+    "pluralName": "maintenances",
+    "displayName": "Maintenance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Status": {
+      "type": "boolean",
+      "required": true
+    },
+    "Message": {
+      "type": "string",
+      "required": true
+    },
+    "Begin": {
+      "type": "datetime",
+      "required": true
+    },
+    "End": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

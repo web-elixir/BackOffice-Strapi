@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scan_codes",
+  "info": {
+    "singularName": "scan-code",
+    "pluralName": "scan-codes",
+    "displayName": "ScanCode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "scanDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "partner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::partner.partner",
+      "inversedBy": "scanCodes"
+    }
+  }
+}

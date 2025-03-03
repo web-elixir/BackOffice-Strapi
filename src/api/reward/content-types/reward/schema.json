@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rewards",
+  "info": {
+    "singularName": "reward",
+    "pluralName": "rewards",
+    "displayName": "Reward",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "begin": {
+      "type": "datetime",
+      "required": true
+    },
+    "end": {
+      "type": "datetime",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "nullable": true
+    },
+    "expired": {
+      "type": "boolean",
+      "required": true
+    },
+    "partner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::partner.partner",
+      "inversedBy": "rewards"
+    },
+    "Number": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rewards"
+    }
+  }
+}

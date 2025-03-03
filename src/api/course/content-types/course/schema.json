@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Parcours",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "minLength": 3,
+      "required": true
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text",
+      "minLength": 3,
+      "required": true
+    },
+    "Media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Status": {
+      "type": "boolean",
+      "default": true
+    },
+    "Valid": {
+      "type": "boolean",
+      "default": true
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "course"
+    }
+  }
+}

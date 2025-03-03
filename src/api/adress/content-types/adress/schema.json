@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "adresses",
+  "info": {
+    "singularName": "adress",
+    "pluralName": "adresses",
+    "displayName": "Adresses",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "street": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {}    
+    },
+    "city": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "postalCode": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 5,
+      "pluginOptions": {}
+    },
+    "longitude": {
+      "type": "float",
+      "pluginOptions": {}
+    },
+    "latitude": {
+      "type": "float",
+      "pluginOptions": {}
+    },
+    "partner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::partner.partner"
+    }
+  }
+}

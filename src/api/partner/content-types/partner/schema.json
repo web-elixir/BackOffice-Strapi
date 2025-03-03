@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners",
+  "info": {
+    "singularName": "partner",
+    "pluralName": "partners",
+    "displayName": "Partenaires",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 10,
+      "pattern": "^(.*\\d+.*)$"
+    },
+    "email": {
+      "type": "string",
+      "pattern": "^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})$"
+    },
+    "description": {
+      "type": "text"
+    },
+    "openHours": {
+      "type": "text"
+    },
+    "offer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::offer.offer",
+      "mappedBy": "partner"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "premium": {
+      "type": "boolean"
+    },
+    "scanCodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scan-code.scan-code",
+      "mappedBy": "partner"
+    },
+    "rewards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reward.reward",
+      "mappedBy": "partner"
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}
