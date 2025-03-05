@@ -661,12 +661,14 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
       }>;
     offer: Schema.Attribute.Relation<'oneToOne', 'api::offer.offer'>;
     openHours: Schema.Attribute.Text;
+    password: Schema.Attribute.Password;
     phone: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 10;
         minLength: 10;
       }>;
     premium: Schema.Attribute.Boolean;
+    pseudo: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     rewards: Schema.Attribute.Relation<'oneToMany', 'api::reward.reward'>;
     scanCodes: Schema.Attribute.Relation<
@@ -742,6 +744,34 @@ export interface ApiScanCodeScanCode extends Struct.CollectionTypeSchema {
     partner: Schema.Attribute.Relation<'manyToOne', 'api::partner.partner'>;
     publishedAt: Schema.Attribute.DateTime;
     scanDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStudentStudent extends Struct.CollectionTypeSchema {
+  collectionName: 'students';
+  info: {
+    displayName: 'Student';
+    pluralName: 'students';
+    singularName: 'student';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::student.student'
+    > &
+      Schema.Attribute.Private;
+    Nom: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1288,6 +1318,7 @@ declare module '@strapi/strapi' {
       'api::partner.partner': ApiPartnerPartner;
       'api::reward.reward': ApiRewardReward;
       'api::scan-code.scan-code': ApiScanCodeScanCode;
+      'api::student.student': ApiStudentStudent;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

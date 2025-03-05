@@ -18,9 +18,44 @@ module.exports = {
             },
         },
         {
+            method: "POST",
+            path: "/auth/partner-login",
+            handler: "partner.login",
+            config: {
+              "policies": [],
+            }
+        },
+        {
             method: "GET",
             path: "/partners/:id",
             handler: "partner.findOne",
+            config: {
+                policies: [],
+                middlewares: [],
+            },
+        },
+        {
+            method: "POST",
+            path: "/partners",
+            handler: "partner.create",
+            config: {
+                policies: [],
+                middlewares: [],
+            },
+        },
+        {
+            method: "PUT",
+            path: "/partners/:id",
+            handler: "partner.update",
+            config: {
+                policies: [],
+                middlewares: [],
+            },
+        },
+        {
+            method: "DELETE",
+            path: "/partners/:id",
+            handler: "partner.delete",
             config: {
                 policies: [],
                 middlewares: [],

@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    }
+  }
+}
