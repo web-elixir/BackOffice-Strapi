@@ -21,7 +21,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-03-12T10:58:42.838Z"
+    "x-generation-date": "2025-03-12T14:59:51.736Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6064,6 +6064,9 @@
                         }
                       }
                     },
+                    "url": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -7945,6 +7948,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "url": {
+                            "type": "string"
                           },
                           "createdAt": {
                             "type": "string",
@@ -10964,6 +10970,9 @@
                               }
                             }
                           },
+                          "url": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -13878,6 +13887,9 @@
                                     }
                                   }
                                 },
+                                "url": {
+                                  "type": "string"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -16020,6 +16032,9 @@
                               "type": "string"
                             }
                           }
+                        },
+                        "url": {
+                          "type": "string"
                         },
                         "createdAt": {
                           "type": "string",
@@ -18421,6 +18436,9 @@
                         }
                       }
                     },
+                    "url": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -18632,6 +18650,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "url": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -20429,6 +20450,9 @@
                         }
                       }
                     },
+                    "url": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -20535,6 +20559,9 @@
                 }
               }
             }
+          },
+          "url": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",

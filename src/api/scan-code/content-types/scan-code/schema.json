@@ -21,6 +21,9 @@
       "relation": "manyToOne",
       "target": "api::partner.partner",
       "inversedBy": "scanCodes"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
