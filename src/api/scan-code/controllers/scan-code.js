@@ -19,7 +19,15 @@ module.exports = {
     },
 
     async create(ctx) {
-        const scanCode = await strapi.services["scan-code"].create(ctx.request.body);
+        const { partner, scanDate } = ctx.request.body.data;
+
+        const scanCode = await strapi.services["api::scan-code.scan-code"].create({
+            data: {
+                partner,
+                scanDate,
+            },
+        });
+
         ctx.body = scanCode;
     },
 }

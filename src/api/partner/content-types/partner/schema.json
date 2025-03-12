@@ -49,12 +49,6 @@
     "premium": {
       "type": "boolean"
     },
-    "scanCodes": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::scan-code.scan-code",
-      "mappedBy": "partner"
-    },
     "rewards": {
       "type": "relation",
       "relation": "oneToMany",
@@ -69,6 +63,12 @@
     },
     "password": {
       "type": "password"
+    },
+    "scanCodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scan-code.scan-code",
+      "mappedBy": "partner"
     }
   }
 }

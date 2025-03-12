@@ -16,7 +16,13 @@ module.exports = createCoreController('api::partner.partner', ({ strapi }) => ({
     async findOne(ctx) {
         try {
             const { id } = ctx.params;
-            const partner = await strapi.entityService.findOne('api::partner.partner', id);
+            const partner = await strapi.entityService.findOne('api::partner.partner', id, {
+                populate: { 
+                    image: true, 
+                    offer: true,
+                    scanCodes: true
+                }    
+            });
 
             if (!partner) {
                 return ctx.throw(404, 'Partenaire non trouvé');
@@ -33,7 +39,7 @@ module.exports = createCoreController('api::partner.partner', ({ strapi }) => ({
         try {
             const {
                 name, phone, email, description, openHours, offer,
-                image, premium, scanCodes, rewards, website, password
+                image, premium, scanCodes, rewards, website, pseudo, password
             } = ctx.request.body.data;
 
             // Validation des champs obligatoires
@@ -46,18 +52,29 @@ module.exports = createCoreController('api::partner.partner', ({ strapi }) => ({
             if (!email || !/^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(email)) {
                 return ctx.badRequest("Le champ 'email' doit être une adresse email valide.");
             }
-            if (!password || password.length < 6) {
+            if (!password || password.length < 7) {
                 return ctx.badRequest("Le champ 'password' est obligatoire et doit contenir au moins 6 caractères.");
             }
 
-            // Hachage du mot de passe avant de le stocker
-            const hashedPassword = await strapi.plugins['users-permissions'].services.user.hashPassword({ password });
+            // Vérifier si l'email ou le pseudo existe déjà
+            const existingPartner = await strapi.entityService.findMany('api::partner.partner', {
+                filters: {
+                    $or: [
+                        { email: email },
+                        { pseudo: pseudo }
+                    ]
+                }
+            });
+
+            if (existingPartner.length > 0) {
+                return ctx.badRequest("L'email ou le pseudo est déjà utilisé.");
+            }
 
             // Création du partenaire
             const newPartner = await strapi.entityService.create('api::partner.partner', {
                 data: {
                     name, phone, email, description, openHours, offer,
-                    image, premium, scanCodes, rewards, website, password: hashedPassword
+                    image, premium, scanCodes, rewards, website, pseudo, password
                 }
             });
 
@@ -67,6 +84,9 @@ module.exports = createCoreController('api::partner.partner', ({ strapi }) => ({
             return ctx.throw(500, "Une erreur est survenue lors de la création du partenaire.");
         }
     },
+
+
+    
 
     // Mettre à jour un partenaire
     async update(ctx) {

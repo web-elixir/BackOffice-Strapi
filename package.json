@@ -19,6 +19,8 @@
     "@strapi/plugin-documentation": "^5.10.3",
     "@strapi/plugin-users-permissions": "^5.10.3",
     "@strapi/strapi": "^5.10.4",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
     "mysql2": "^3.12.0",
