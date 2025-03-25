@@ -754,6 +754,7 @@ export interface ApiScanCodeScanCode extends Struct.CollectionTypeSchema {
 export interface ApiStudentStudent extends Struct.CollectionTypeSchema {
   collectionName: 'students';
   info: {
+    description: '';
     displayName: 'Student';
     pluralName: 'students';
     singularName: 'student';
@@ -772,6 +773,7 @@ export interface ApiStudentStudent extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Nom: Schema.Attribute.String;
+    password: Schema.Attribute.Password;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1234,14 +1236,14 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
+    populateCreatorFields: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1288,8 +1290,7 @@ export interface PluginUsersPermissionsUser
     >;
     State: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &

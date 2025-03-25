@@ -21,7 +21,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-03-12T14:59:51.736Z"
+    "x-generation-date": "2025-03-19T14:37:35.420Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5638,15 +5638,6 @@
                           "type": "string",
                           "format": "email"
                         },
-                        "firstname": {
-                          "type": "string"
-                        },
-                        "lastname": {
-                          "type": "string"
-                        },
-                        "point": {
-                          "type": "integer"
-                        },
                         "provider": {
                           "type": "string"
                         },
@@ -5825,6 +5816,15 @@
                               }
                             }
                           }
+                        },
+                        "firstname": {
+                          "type": "string"
+                        },
+                        "lastname": {
+                          "type": "string"
+                        },
+                        "point": {
+                          "type": "integer"
                         },
                         "phone": {
                           "type": "string"
@@ -7523,15 +7523,6 @@
                                 "type": "string",
                                 "format": "email"
                               },
-                              "firstname": {
-                                "type": "string"
-                              },
-                              "lastname": {
-                                "type": "string"
-                              },
-                              "point": {
-                                "type": "integer"
-                              },
                               "provider": {
                                 "type": "string"
                               },
@@ -7710,6 +7701,15 @@
                                     }
                                   }
                                 }
+                              },
+                              "firstname": {
+                                "type": "string"
+                              },
+                              "lastname": {
+                                "type": "string"
+                              },
+                              "point": {
+                                "type": "integer"
                               },
                               "phone": {
                                 "type": "string"
@@ -10544,15 +10544,6 @@
                                 "type": "string",
                                 "format": "email"
                               },
-                              "firstname": {
-                                "type": "string"
-                              },
-                              "lastname": {
-                                "type": "string"
-                              },
-                              "point": {
-                                "type": "integer"
-                              },
                               "provider": {
                                 "type": "string"
                               },
@@ -10731,6 +10722,15 @@
                                     }
                                   }
                                 }
+                              },
+                              "firstname": {
+                                "type": "string"
+                              },
+                              "lastname": {
+                                "type": "string"
+                              },
+                              "point": {
+                                "type": "integer"
                               },
                               "phone": {
                                 "type": "string"
@@ -13461,15 +13461,6 @@
                                       "type": "string",
                                       "format": "email"
                                     },
-                                    "firstname": {
-                                      "type": "string"
-                                    },
-                                    "lastname": {
-                                      "type": "string"
-                                    },
-                                    "point": {
-                                      "type": "integer"
-                                    },
                                     "provider": {
                                       "type": "string"
                                     },
@@ -13648,6 +13639,15 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "firstname": {
+                                      "type": "string"
+                                    },
+                                    "lastname": {
+                                      "type": "string"
+                                    },
+                                    "point": {
+                                      "type": "integer"
                                     },
                                     "phone": {
                                       "type": "string"
@@ -15607,15 +15607,6 @@
                               "type": "string",
                               "format": "email"
                             },
-                            "firstname": {
-                              "type": "string"
-                            },
-                            "lastname": {
-                              "type": "string"
-                            },
-                            "point": {
-                              "type": "integer"
-                            },
                             "provider": {
                               "type": "string"
                             },
@@ -15794,6 +15785,15 @@
                                   }
                                 }
                               }
+                            },
+                            "firstname": {
+                              "type": "string"
+                            },
+                            "lastname": {
+                              "type": "string"
+                            },
+                            "point": {
+                              "type": "integer"
                             },
                             "phone": {
                               "type": "string"
@@ -18010,15 +18010,6 @@
                           "type": "string",
                           "format": "email"
                         },
-                        "firstname": {
-                          "type": "string"
-                        },
-                        "lastname": {
-                          "type": "string"
-                        },
-                        "point": {
-                          "type": "integer"
-                        },
                         "provider": {
                           "type": "string"
                         },
@@ -18197,6 +18188,15 @@
                               }
                             }
                           }
+                        },
+                        "firstname": {
+                          "type": "string"
+                        },
+                        "lastname": {
+                          "type": "string"
+                        },
+                        "point": {
+                          "type": "integer"
                         },
                         "phone": {
                           "type": "string"
@@ -20024,15 +20024,6 @@
                           "type": "string",
                           "format": "email"
                         },
-                        "firstname": {
-                          "type": "string"
-                        },
-                        "lastname": {
-                          "type": "string"
-                        },
-                        "point": {
-                          "type": "integer"
-                        },
                         "provider": {
                           "type": "string"
                         },
@@ -20211,6 +20202,15 @@
                               }
                             }
                           }
+                        },
+                        "firstname": {
+                          "type": "string"
+                        },
+                        "lastname": {
+                          "type": "string"
+                        },
+                        "point": {
+                          "type": "integer"
                         },
                         "phone": {
                           "type": "string"
@@ -20638,6 +20638,11 @@
             "properties": {
               "Nom": {
                 "type": "string"
+              },
+              "password": {
+                "type": "string",
+                "format": "password",
+                "example": "*******"
               },
               "locale": {
                 "type": "string"

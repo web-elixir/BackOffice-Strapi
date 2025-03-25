@@ -13,7 +13,11 @@ module.exports = {
     },
     async findOne(ctx) {
         const id = ctx.params.id;
-        const adresses = await strapi.db.query("api::adress.adress").findOne({ id });
-        ctx.body = adresses;
+        const adress = await strapi.entityService.findOne('api::adress.adress', id, {
+            populate: {
+                partner: true
+            }
+        });
+        ctx.body = adress;
     }
-}
+};
